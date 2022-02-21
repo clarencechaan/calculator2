@@ -1,0 +1,115 @@
+body {
+    display: flex;
+    justify-content: center;
+    background-color: black;
+}
+
+#calculator {
+    display: flex;
+    flex-direction: column;
+    height: 525px;
+    width: 350px;
+    margin-top: 20px;
+    gap: 15px;
+    background-color: black;
+    padding: 20px;
+    border-radius: 30px;
+    border-width: 5px;
+    border-color: #9f9f9f;
+    border-style: solid;
+}
+
+.calculator-row {
+    display: flex;
+    flex: 1;
+    gap: 15px;
+}
+
+.calculator-row button {
+    flex: 1;
+}
+
+#num-0 {
+    flex: 2.1;
+}
+
+#displayValue {
+    font-family: 'Roboto', sans-serif;
+    font-size: 38pt;
+    color: white;
+    justify-content: right;
+    align-items: center;
+}
+
+button {
+    border-width: 0;
+    border-radius: 100px;
+    padding: 0;
+    font-size: 24pt;
+    cursor: pointer;
+    font-family: 'Roboto', sans-serif;
+}
+
+button:focus {
+    outline: none;
+}
+
+#clear,
+#pos-neg,
+#percent {
+    background-color: #9f9f9f;
+}
+
+#divide,
+#multiply,
+#subtract,
+#add,
+#equals {
+    background-color: #f69906;
+    color: white;
+}
+
+.number-button {
+    background-color: #313131;
+    color: white;
+}
+
+.number-button:active {
+    background-color: #737373;
+}
+
+.number-button:not(:active) {
+    background-color: #313131;
+    transition: .5s;
+}
+
+#clear:active,
+#pos-neg:active,
+#percent:active {
+    background-color: #d9d9d9;
+}
+
+#clear:not(:active),
+#pos-neg:not(:active),
+#percent:not(:active) {
+    background-color: #9f9f9f;
+    transition: .5s;
+}
+
+#divide:active,
+#multiply:active,
+#subtract:active,
+#add:active,
+#equals:active {
+    background-color: #fcc78d;
+}
+
+#divide:not(:active),
+#multiply:not(:active),
+#subtract:not(:active),
+#add:not(:active),
+#equals:not(:active) {
+    background-color: #f69906;
+    transition: .5s;
+}
+
