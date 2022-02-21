@@ -43,7 +43,6 @@ function storeOperator(selectedOperator) {
     firstNum = displayValue;
     displayValue = '0'
     operator = selectedOperator;
-    console.log(operator);
 }
 
 // input number or decimal, build onto displayValue
@@ -59,7 +58,6 @@ function buildDisplayValue(number) {
         displayValue = (displayValue + number).toString();
     }
     display.innerText = displayValue;
-    console.log(displayValue);
 }
 
 function negateDisplayValue() {
@@ -92,7 +90,48 @@ function executePercent() {
     display.innerText = fitToCalculator(result);
     displayValue = fitToCalculator(result).toString();
     operator = null;
+}
 
+function executeKey(e) {
+    switch (e.key) {
+        case '0':
+        case '1':
+        case '2':
+        case '3':
+        case '4':
+        case '5':
+        case '6':
+        case '7':
+        case '8':
+        case '9':
+            document.getElementById(`num-${e.key}`).click();
+            break;
+        case '.':
+            document.getElementById('decimal').click();
+            break;
+        case 'Escape':
+        case 'Backspace':
+            document.getElementById('clear').click();
+            break;
+        case '/':
+            document.getElementById('divide').click();
+            break;
+        case '*':
+        case 'x':
+            document.getElementById('multiply').click();
+            break;
+        case '-':
+            document.getElementById('subtract').click();
+            break;
+        case '+':
+            document.getElementById('add').click();
+            break;
+        case '=':
+        case 'Enter':
+            document.getElementById('equals').click();
+            break;
+    }
+}
 
 // add event listeners to number and decimal buttons
 const numButtons = document.querySelectorAll('.number-button');
@@ -124,3 +163,6 @@ posNegButton.addEventListener('click', negateDisplayValue);
 // add event listener to percent button
 const percentButton = document.querySelector('#percent');
 percentButton.addEventListener('click', executePercent);
+
+// add event listener for keyboard presses
+document.addEventListener('keydown', (e) => executeKey(e));
