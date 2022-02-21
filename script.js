@@ -40,8 +40,10 @@ function clearDisplay() {
 }
 
 function storeOperator(selectedOperator) {
-    firstNum = displayValue;
-    displayValue = '0'
+    if (operator === null) {
+        firstNum = displayValue;
+        displayValue = '0';
+    }
     operator = selectedOperator;
 }
 
